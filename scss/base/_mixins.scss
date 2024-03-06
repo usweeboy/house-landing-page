@@ -1,0 +1,59 @@
+@mixin center-element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin primary-btn($background-color, $text-color, $border-color, $hover-bg, $hover-color) {
+  font-size: 20px;
+  line-height: 23px;
+  background-color: $background-color;
+  color: $text-color;
+  padding: 20px 60px;
+  border: 1px solid $border-color;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  &:hover {
+    background-color: $hover-bg;
+    color: $hover-color;
+  }
+
+  @include tablet() {
+    font-size: 18px;
+    line-height: 21px;
+    padding: 15px 40px;
+    &:hover {
+      background-color: $background-color;
+      color: $text-color;
+    }
+  }
+
+  @include mobile() {
+    padding: 15px 30px;
+  }
+}
+
+@mixin laptop() {
+  @media (max-width: 1110px) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile() {
+  @media (max-width: 576px) {
+    @content;
+  }
+}

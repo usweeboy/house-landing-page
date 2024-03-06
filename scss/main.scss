@@ -1,0 +1,20 @@
+// Base
+@import 
+  './base/reset',
+  './base/fonts',
+  './base/vars',
+  './base/mixins',
+  './base/base'
+;
+
+// Blocks
+@import 
+  './blocks/header',
+  './blocks/menu',
+  './blocks/top',
+  './blocks/reproductions',
+  './blocks/card',
+  './blocks/new',
+  './blocks/about',
+  './blocks/footer'
+;

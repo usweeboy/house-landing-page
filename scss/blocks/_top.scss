@@ -1,0 +1,92 @@
+.top { 
+  &__inner {
+    @include flex-between;
+    gap: 30px;
+  }
+  &__body {
+    max-width: 540px;
+  }
+  &__title {
+    & span {
+      color: var(--green);
+    }
+  }
+  &__description {
+    margin-top: 20px;
+    color: var(--gray);
+    font-size: 18px;
+    line-height: 27px;
+  }
+  &__btn {
+    margin-top: 60px;
+    @include primary-btn(
+      var(--light), 
+      var(--green), 
+      var(--green), 
+      var(--green), 
+      var(--light)
+    );
+  }
+}
+
+@include laptop() {
+  .top {
+    padding-top: 25px;
+    &__inner {
+      justify-content: space-around;
+    }
+    &__image {
+      max-width: 330px;
+    }
+    &__title {
+      font-size: 50px;
+      line-height: 50px;
+    }
+    &__btn {
+      margin-top: 40px;
+    }
+  }
+}
+
+@include tablet() {
+  .top {
+    padding-top: 50px;
+    &__image {
+      max-width: 195px;
+    }
+    &__title {
+      font-size: 36px;
+      line-height: 36px;
+    }
+    &__description {
+      margin-top: 10px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+    &__btn {
+      margin-top: 11px;
+    }
+  }
+}
+
+@include mobile() {
+  .top {
+    padding-top: 60px;
+    &__image {
+      display: none;
+    }
+    &__title {
+      max-width: 285px;
+      font-size: 30px;
+      line-height: 30px;
+    }
+    &__description {
+      margin-top: 20px;
+      font-size: 14px;
+      line-height: 21px;
+    }
+    &__btn {
+      margin-top: 40px;
+    }
+  }
+}

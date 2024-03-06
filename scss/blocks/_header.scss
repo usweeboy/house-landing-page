@@ -1,0 +1,111 @@
+.header {
+  background-color: var(--light-green);
+  padding-block: 32px; 
+  &__inner {
+    @include flex-between;
+  }
+  &__row {
+    @include flex-between;
+    gap: 60px;
+  }
+  .shopping-cart {
+    cursor: pointer;
+    position: relative;
+    &__count {
+      opacity: 0;
+      position: absolute;
+      background: var(--green);
+      color: white;
+      @include center-element;
+      width: 13px;
+      height: 13px;
+      border-radius: 100%;
+      font-weight: 700;
+      font-size: 10px;
+      line-height: 11px;
+    }
+    & svg path {
+      transition: stroke .2s;
+    }
+    &:hover svg path {
+      stroke: var(--green);
+    }
+  }
+  &-burger {
+    z-index: 50;
+    display: none;
+    position: relative;
+    width: 21px;
+    height: 18px;
+    border: none;
+    cursor: pointer;
+    background: none;
+  }
+  &-burger span {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    right: 0;
+    background-color: #4C5866;
+    border-radius: 12px;
+    transition: transform 400ms, opacity 400ms;
+  }
+  &-burger span:nth-child(1) {
+    transform: translateY(-8px);
+  }
+  &-burger span:nth-child(3) {
+    transform: translateY(8px);
+  }
+  &-burger.active span:nth-child(1) {
+    transform: translateY(0) rotate(45deg);
+  }
+  &-burger.active span:nth-child(2) {
+    transform: translateY(0px) rotate(-45deg);
+  }
+  &-burger.active span:nth-child(3) {
+    opacity: 0;
+  }
+}
+
+@include tablet() {
+  .header {
+    padding-block: 0;
+    &__inner {
+      flex-direction: column;
+    }
+    &__logo {
+      width: 100%;
+      padding: 16px 0;
+      @include center-element;
+      border-bottom: 1px solid #C3D1C6;
+    }
+    &__row {
+      width: 100%;
+      padding: 16px 0;
+    }
+    .shopping-cart {
+      &:hover svg path {
+        stroke: var(--dark);
+      }
+    }
+  }
+}
+
+@include mobile() {
+  .header {
+    background-color: white;
+    & .container {
+      padding: 0; 
+    }
+    &__logo {
+      border: none;
+    }
+    &__row {
+      background-color: var(--light-green);
+      padding: 15px 16px;
+    }
+    .header-burger {
+      display: block;
+    }
+  }
+}

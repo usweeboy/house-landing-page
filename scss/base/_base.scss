@@ -1,0 +1,70 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #F4F6F5;
+  font-family: "Raleway";
+  font-weight: 500;
+  color: #2C2D35;
+}
+
+h1 {
+  font-size: 60px;
+  line-height: 66px;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 44px;
+  font-weight: 500;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1190px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.aos-init {
+  z-index: 1;
+}
+
+.aos-animate {
+  z-index: 2;
+}
+
+@include laptop() {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@include tablet() {
+  body.lock {
+    overflow: auto;
+  }
+  .container {
+    padding: 0 33px;
+  }
+}
+
+@include mobile() {
+  body.lock {
+    overflow: hidden;
+  }
+  .container {
+    padding: 0 15px;
+  }
+}
+
